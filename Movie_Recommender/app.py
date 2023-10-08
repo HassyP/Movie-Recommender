@@ -1,6 +1,7 @@
 import pickle
 import streamlit as st
 import requests
+import gdown
 
 
 def fetch_poster(movie_id):
