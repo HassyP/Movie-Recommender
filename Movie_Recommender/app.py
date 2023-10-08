@@ -29,8 +29,12 @@ def recommend(movie):
 
 
 st.header('Movie Recommender System')
-movies = pickle.load(open('movie_list.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+m_url = 'https://drive.google.com/file/d/1-QPs8hv7SmVzrUdIrlyBVwm6dOYdNgmZ/view?usp=sharing'
+s_url = 'https://drive.google.com/file/d/1YW_Lg1sQrCpFkk0O0YaqpLi4_yuGqtae/view?usp=sharing'
+model = gdown.download(m_url, output, quiet=False, fuzzy=True)
+model2 = gdown.download(s_url, output, quiet=False, fuzzy=True)
+movies = pickle.load(open(model, 'rb'))
+similarity = pickle.load(open(model2, 'rb'))
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox(
