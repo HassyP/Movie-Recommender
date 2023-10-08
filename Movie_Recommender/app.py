@@ -35,7 +35,7 @@ s_url = 'https://drive.google.com/file/d/1YW_Lg1sQrCpFkk0O0YaqpLi4_yuGqtae/view?
 output = 'movie.pkl'
 output2 = 'similarity.pkl'
 model = gdown.download(m_url, output, quiet=False, fuzzy=True)
-model2 = gdown.download(s_url, output, quiet=False, fuzzy=True)
+model2 = gdown.download(s_url, output2, quiet=False, fuzzy=True)
 movies = pickle.load(open('movie.pkl', 'rb'))
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
