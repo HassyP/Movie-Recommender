@@ -3,6 +3,45 @@ import streamlit as st
 import requests
 import gdown
 
+st.set_page_config(page_title="Movie Recommender", layout="wide")
+
+st.markdown("""
+    <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        /* Add your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: red;
+        }
+
+        .st-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .st-subheader {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Add border to st.file_uploader */
+        .css-qnt3a9 {
+            border: 2px solid #fff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+
+    .css-1l269bu {
+        align-self: center;
+        width: calc(16.6667% - 1rem);
+        flex: 1 1 calc(16.6667% - 1rem);
+        }
+        /* Add more styling rules as needed */
+    </style>
+""", unsafe_allow_html=True)
 
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US".format(
@@ -29,7 +68,7 @@ def recommend(movie):
     return recommended_movie_names, recommended_movie_posters
 
 
-st.header('Movie Recommender System')
+st.header('Movie Recommender')
 m_url = 'https://drive.google.com/file/d/1-QPs8hv7SmVzrUdIrlyBVwm6dOYdNgmZ/view?usp=sharing'
 s_url = 'https://drive.google.com/file/d/1YW_Lg1sQrCpFkk0O0YaqpLi4_yuGqtae/view?usp=sharing'
 output = 'movie.pkl'
